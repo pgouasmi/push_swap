@@ -5,94 +5,148 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 10:50:31 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/02/17 14:00:31 by pgouasmi         ###   ########.fr       */
+/*   Created: 2023/03/22 11:02:50 by pgouasmi          #+#    #+#             */
+/*   Updated: 2023/03/29 17:10:59 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static int	check_pos_neg(const char *str, int *i)
+void	print_values(t_list *a_head)
 {
-	if (str[(*i)] == '-')
+	t_list	*temp;
+
+	temp = a_head;
+	while (temp)
 	{
-		(*i)++;
-		return (0);
+		ft_printf("%d\n", temp->content);
+		temp = temp->next;
 	}
-	else if (str[(*i)] == '+')
-	{
-		(*i)++;
-		return (1);
-	}
-	else if (str[(*i)] >= '0' && str[(*i)] <= '9')
-		return (1);
+}
+
+void	new_node(t_list **a_head, int value)
+{
+	t_list	*new;
+	t_list	*temp;
+
+	temp = *a_head;
+	new = malloc(sizeof(*new));
+	new->content = value;
+	new->next = NULL;
+	if (!*a_head)
+		*a_head = new;
 	else
-		return (2);
-}
-
-int	ft_atoi(const char *str)
-{
-	long long int	result;
-	int				i;
-	int				sign;
-
-	i = 0;
-	result = 0;
-	sign = check_pos_neg(str, &i);
-	if (sign == 2)
-		return (0);
-	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (result != ((result * 10 + (sign * (str[i] - '0'))) / 10))
-			return ((int)((sign + 1) / 2 / -1));
-		result = result * 10 + (str[i] - 48);
-		i++;
+		while (temp->next)
+			temp = temp->next;
+		temp->next = new;
 	}
-	if (sign == 0)
-		result = result * -1;
-	if (result > 2147483647 || result < -2147483648)
-		return (0);
-	return ((int)result);
 }
 
-int check_arg(char* str)
+int	argv_into_list(int argc, char **argv, t_list **a_head)
 {
-	 int i;
+	int	*tab;
+	int	i;
+	int	j;
 
-	 i = 0;
-	 if (str[i] == '-')
-	 	i++;
-	while (str[i])
+	tab = malloc(sizeof(int) * (argc - 1));
+	if (!tab)
+		return (1);
+	j = 1;
+	i = 0;
+	while (j < argc)
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			i++;
-		else
+		tab[i] = ft_atoi(argv[j]);
+		if (tab[i] == 0 && argv[j][0] != 0)
 			return (1);
+		new_node(a_head, tab[i]);
+		i++;
+		j++;
 	}
 	return (0);
 }
 
-int main (int argc, char **argv)
+int	check_single_int_arg(char *str)
 {
-	int j;
-	int tab[argc - 1];
+	int	i;
 
-	j = 0;
-	while (++j < argc)
+	i = 0;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	while (str[i])
 	{
-		if (check_arg(argv[j]))
-			return (printf("Probleme sur le %deme argument\n", j), 1);
+		if (!ft_isdigit((int)str[i]))
+			return (1);
+		i++;
 	}
-	j = 0;
-	while(j < argc - 1)
+	return (0);
+}
+
+int	ft_check_int_error(int argc, char **argv)
+{
+	int	j;
+
+	j = 1;
+	while (j < argc)
 	{
-		printf("argument no %d\n", j + 1);
-		tab[j] = ft_atoi(argv[j + 1]);
-		if (tab[j] == 0 && argv[j + 1][0] != '0')
-			return (printf("Probleme sur le %deme argument\n", j + 1), 1);
-		printf("tab[%d] = %d\n", j, tab[j]);
+		if (check_single_int_arg(argv[j]))
+			return (1);
 		j++;
 	}
-	return (printf("Alrighty\n"), 0);
+	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	t_list	*a_head;
+	t_list	*b_head;
+
+	a_head = NULL;
+	b_head = NULL;
+	if (ft_check_int_error(argc, argv))
+		return (ft_printf("Error\n"), 1);
+	if (argv_into_list(argc, argv, &a_head))
+		return (ft_printf("Error\n"), 1);
+	if (a_head == NULL)
+		return (ft_printf("Error\n"), 1);
+	print_values(a_head);
+	ft_printf("\n\n");
+	push_b(&a_head, &b_head);
+	push_b(&a_head, &b_head);
+	print_values(a_head);
+	ft_printf("\n\n");
+	print_values(b_head);
+	ft_printf("\n\n");
+	rotate_b(&b_head);
+	print_values(a_head);
+	ft_printf("\n\n");
+	print_values(b_head);
+	ft_printf("\n\n");
+	rr (&a_head, &b_head);
+	print_values(a_head);
+	ft_printf("\n\n");
+	print_values(b_head);
+	ft_printf("\n\n");
+	reverse_rotate_a (&a_head);
+	print_values(a_head);
+	ft_printf("\n\n");
+	reverse_rotate_b (&b_head);
+	print_values(b_head);
+	ft_printf("\n\n");
+	rrr(&a_head, &b_head);
+	print_values(a_head);
+	ft_printf("\n\n");
+	print_values(b_head);
+	ft_printf("\n\n");
+
+	// print_values(a_head);
+	// ft_printf("\n\n");
+	// push_b(&a_head, &b_head);
+	// ft_printf("\n\n");
+	// print_values(b_head);
+	// ft_printf("\n\n");
+	// push_a(&a_head, &b_head);
+	// ft_printf("\n\n");
+	// print_values(b_head);
+	// print_values(a_head);
 }
