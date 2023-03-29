@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:43:06 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/29 17:51:02 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:30:46 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	argv_into_list(int argc, char **argv, t_list **a_head)
 
 	tab = malloc(sizeof(int) * (argc - 1));
 	if (!tab)
-		return (1);
+		return (ft_printf("Malloc error\n"), 1);
 	j = 1;
 	i = 0;
 	while (j < argc)
