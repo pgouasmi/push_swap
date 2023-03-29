@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:09:42 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/29 17:00:33 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:52:04 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,12 @@ void	ft_putchar_pf(int c, size_t *char_count);
 void	ft_putstr_pf(const char *s, size_t *char_count);
 void	ft_putnbr_base(long long int n, const char *base, size_t *char_count);
 void	ft_putnbr_base_p(size_t n, const char *base, size_t *char_count);
+int		check_single_int_arg(char *str);
+int		ft_check_int_error(int argc, char **argv);
+int		argv_into_list(int argc, char **argv, t_list **a_head);
+int		new_node(t_list **a_head, int value);
+void	print_values(t_list *a_head);
+void	ft_free_list(t_list	**head);
 void	swap_a(t_list **a_head);
 void	swap_b(t_list **b_head);
 void	ss(t_list **a_head, t_list **b_head);

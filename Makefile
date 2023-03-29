@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:02:40 by pgouasmi          #+#    #+#              #
-#    Updated: 2023/03/29 17:02:55 by pgouasmi         ###   ########.fr        #
+#    Updated: 2023/03/29 17:54:58 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,9 @@ SRCSLIB = ./includes/ft_isalnum.c	\
 		./instructions_ps/instructions_push_swap.c	\
 		./instructions_ps/instructions_push_swap2.c	\
 		./instructions_ps/instructions_push_swap3.c	\
+		./push_swap_resources/error_manager_push_swap.c					\
+		./push_swap_resources/list_creator.c								\
+		./push_swap_resources/push_swap_tools.c							\
 		
 
 OBJS = ${SRCSLIB:.c=.o}
