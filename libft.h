@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:09:42 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 16:36:18 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:27:14 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,27 +70,27 @@ void	ft_putchar_pf(int c, size_t *char_count);
 void	ft_putstr_pf(const char *s, size_t *char_count);
 void	ft_putnbr_base(long long int n, const char *base, size_t *char_count);
 void	ft_putnbr_base_p(size_t n, const char *base, size_t *char_count);
-int		str_same_char_str(const char *str, int c);
+int		ft_str_same_char_str(const char *str, int c);
 size_t	ft_str_remaining_char_count(const char *str, int *i);
-int		check_single_int_arg(char *str);
+int		ft_check_single_int_arg(char *str);
 int		ft_check_int_error(int argc, char **argv);
 int		ft_check_int_duplicate(int *tab, int argc);
-int		argv_into_list(int argc, char **argv, t_list **a_head);
-int		new_node(t_list **a_head, int value);
+int		ft_argv_into_list(int argc, char **argv, t_list **a_head);
+int		ft_new_node(t_list **a_head, int value);
 void	ft_print_tab_values(int *tab, int count);
-void	print_values(t_list *head);
+void	ft_print_list_values(t_list *head);
 void	ft_free_list(t_list	**head);
-void	swap_a(t_list **a_head);
-void	swap_b(t_list **b_head);
-void	ss(t_list **a_head, t_list **b_head);
-void	push_a(t_list **a_head, t_list **b_head);
-void	push_b(t_list **a_head, t_list **b_head);
-void	rotate_a(t_list **head);
-void	rotate_b(t_list **head);
-void	rr(t_list **head_a, t_list **head_b);
-void	reverse_rotate_a(t_list **head);
-void	reverse_rotate_b(t_list **head);
-void	rrr(t_list **head_a, t_list **head_b);
+void	ft_swap_a(t_list **a_head);
+void	ft_swap_b(t_list **b_head);
+void	ft_ss(t_list **a_head, t_list **b_head);
+void	ft_push_a(t_list **a_head, t_list **b_head);
+void	ft_push_b(t_list **a_head, t_list **b_head);
+void	ft_rotate_a(t_list **head);
+void	ft_rotate_b(t_list **head);
+void	ft_rr(t_list **head_a, t_list **head_b);
+void	ft_reverse_rotate_a(t_list **head);
+void	ft_reverse_rotate_b(t_list **head);
+void	ft_rrr(t_list **head_a, t_list **head_b);
 void	ft_push_swap_algorithms(t_list **a_head, t_list **b_head, int argc);
 void	ft_two_elements(t_list **head);
 int		ft_list_is_ordered(t_list **head);

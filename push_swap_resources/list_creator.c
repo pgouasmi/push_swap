@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:43:06 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 16:34:52 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:26:03 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	new_node(t_list **a_head, int value)
+int	ft_new_node(t_list **a_head, int value)
 {
 	t_list	*new;
 	t_list	*temp;
@@ -34,7 +34,7 @@ int	new_node(t_list **a_head, int value)
 	return (0);
 }
 
-int	argv_into_list(int argc, char **argv, t_list **a_head)
+int	ft_argv_into_list(int argc, char **argv, t_list **a_head)
 {
 	int	*tab;
 	int	i;
@@ -48,10 +48,10 @@ int	argv_into_list(int argc, char **argv, t_list **a_head)
 	while (j < argc)
 	{
 		tab[i] = ft_atoi(argv[j]);
-		if (tab[i] == 0 && str_same_char_str((ft_strtrim
+		if (tab[i] == 0 && ft_str_same_char_str((ft_strtrim
 					((const char *)argv[j], "+-")), '0'))
 			return (1);
-		if (new_node(a_head, tab[i]))
+		if (ft_new_node(a_head, tab[i]))
 			return (ft_printf("Malloc error\n"), 1);
 		i++;
 		j++;

@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:05:35 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 14:24:29 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:27:50 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_atoi(const char *str)
 	result = 0;
 	ft_skipws(str, &i);
 	if ((str[i] == '+' || str[i] == '-')
-		&& (str_same_char_str(ft_substr(str, (unsigned int) i,
+		&& (ft_str_same_char_str(ft_substr(str, (unsigned int) i,
 					ft_str_remaining_char_count(str, &i)), '0')))
 		return (0);
 	sign = check_pos_neg(str, &i);

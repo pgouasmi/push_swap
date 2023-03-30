@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 16:02:53 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/29 16:50:01 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:24:29 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	rotate_a(t_list **head)
+void	ft_rotate_a(t_list **head)
 {
 	t_list	*first;
 	t_list	*second;
@@ -33,7 +33,7 @@ void	rotate_a(t_list **head)
 	ft_printf("ra\n");
 }
 
-void	rotate_b(t_list **head)
+void	ft_rotate_b(t_list **head)
 {
 	t_list	*first;
 	t_list	*second;
@@ -54,8 +54,8 @@ void	rotate_b(t_list **head)
 	ft_printf("rb\n");
 }
 
-void	rr(t_list **head_a, t_list **head_b)
+void	ft_rr(t_list **head_a, t_list **head_b)
 {
-	rotate_a(head_a);
-	rotate_b(head_b);
+	ft_rotate_a(head_a);
+	ft_rotate_b(head_b);
 }

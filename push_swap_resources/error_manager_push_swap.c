@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:33:10 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 15:18:41 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:25:45 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_single_int_arg(char *str)
+int	ft_check_single_int_arg(char *str)
 {
 	int	i;
 
@@ -35,7 +35,7 @@ int	ft_check_int_error(int argc, char **argv)
 	j = 1;
 	while (j < argc)
 	{
-		if (check_single_int_arg(argv[j]))
+		if (ft_check_single_int_arg(argv[j]))
 			return (1);
 		j++;
 	}

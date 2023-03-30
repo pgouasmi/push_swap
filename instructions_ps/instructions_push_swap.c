@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 15:32:53 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/29 16:01:12 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:24:41 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	swap_a(t_list **a_head)
+void	ft_swap_a(t_list **a_head)
 {
 	t_list	*temp_first;
 	t_list	*temp_second;
@@ -27,7 +27,7 @@ void	swap_a(t_list **a_head)
 	ft_printf("sa\n");
 }
 
-void	swap_b(t_list **b_head)
+void	ft_swap_b(t_list **b_head)
 {
 	t_list	*temp_first;
 	t_list	*temp_second;
@@ -42,13 +42,13 @@ void	swap_b(t_list **b_head)
 	ft_printf("sb\n");
 }
 
-void	ss(t_list **a_head, t_list **b_head)
+void	ft_ss(t_list **a_head, t_list **b_head)
 {
-	swap_a(a_head);
-	swap_b(b_head);
+	ft_swap_a(a_head);
+	ft_swap_b(b_head);
 }
 
-void	push_a(t_list **a_head, t_list **b_head)
+void	ft_push_a(t_list **a_head, t_list **b_head)
 {
 	t_list	*first_a;
 	t_list	*first_b;
@@ -76,7 +76,7 @@ void	push_a(t_list **a_head, t_list **b_head)
 	ft_printf("pa\n");
 }
 
-void	push_b(t_list **a_head, t_list **b_head)
+void	ft_push_b(t_list **a_head, t_list **b_head)
 {
 	t_list	*first_a;
 	t_list	*first_b;

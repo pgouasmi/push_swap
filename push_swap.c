@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:02:50 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 16:35:26 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:23:08 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	b_head = NULL;
 	if (ft_check_int_error(argc, argv))
 		return (ft_printf("Error\n"), 1);
-	if (argv_into_list(argc, argv, &a_head))
+	if (ft_argv_into_list(argc, argv, &a_head))
 		return (ft_printf("Error\n"), 1);
 	if (a_head == NULL)
 		return (ft_printf("Error\n"), 1);
