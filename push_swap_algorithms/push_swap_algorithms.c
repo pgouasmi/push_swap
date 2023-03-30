@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_algorithms.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 11:02:50 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 16:35:26 by pgouasmi         ###   ########.fr       */
+/*   Created: 2023/03/30 15:23:00 by pgouasmi          #+#    #+#             */
+/*   Updated: 2023/03/30 16:28:08 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_push_swap_algorithms(t_list **a_head, t_list **b_head, int argc)
 {
-	t_list	*a_head;
-	t_list	*b_head;
-
-	a_head = NULL;
-	b_head = NULL;
-	if (ft_check_int_error(argc, argv))
-		return (ft_printf("Error\n"), 1);
-	if (argv_into_list(argc, argv, &a_head))
-		return (ft_printf("Error\n"), 1);
-	if (a_head == NULL)
-		return (ft_printf("Error\n"), 1);
-	ft_push_swap_algorithms(&a_head, &b_head, argc - 1);
-	return (0);
+	*b_head = *b_head;
+	
+	if (argc == 0 || argc == 1)
+		return ;
+	if (argc == 2)
+		ft_two_elements(a_head);
+	// else if (argc == 3)
+	// 	ft_three_elements(a_head, b_head);
+	// else if (argc == 4)
+	// 	ft_four_elements(a_head, b_head);		
+	// else
+	// 	ft_radix(a_head, b_head);
+	return ;
 }

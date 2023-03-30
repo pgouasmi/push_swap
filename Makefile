@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:02:40 by pgouasmi          #+#    #+#              #
-#    Updated: 2023/03/29 17:54:58 by pgouasmi         ###   ########.fr        #
+#    Updated: 2023/03/30 16:08:01 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,12 +57,17 @@ SRCSLIB = ./includes/ft_isalnum.c	\
 		./includes/ft_putnbr_base.c	\
 		./includes/ft_putnbr_base_p.c\
 		./includes/ft_putstr_pf.c	\
+		./includes/ft_str_remaining_charcount.c \
+		./includes/ft_str_same_char_str.c		\
 		./instructions_ps/instructions_push_swap.c	\
 		./instructions_ps/instructions_push_swap2.c	\
 		./instructions_ps/instructions_push_swap3.c	\
-		./push_swap_resources/error_manager_push_swap.c					\
-		./push_swap_resources/list_creator.c								\
-		./push_swap_resources/push_swap_tools.c							\
+		./push_swap_resources/error_manager_push_swap.c	\
+		./push_swap_resources/list_creator.c			\
+		./push_swap_resources/push_swap_tools.c			\
+		./push_swap_algorithms/push_swap_algorithms.c 			\
+		./push_swap_algorithms/two_elements_case.c		\
+		
 		
 
 OBJS = ${SRCSLIB:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:05:35 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/22 14:15:53 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:24:29 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,16 @@ int	ft_atoi(const char *str)
 {
 	long long int	result;
 	int				i;
-	int				*p_i;
 	int				sign;
 
 	i = 0;
 	result = 0;
-	p_i = &i;
-	ft_skipws(str, p_i);
-	sign = check_pos_neg(str, p_i);
+	ft_skipws(str, &i);
+	if ((str[i] == '+' || str[i] == '-')
+		&& (str_same_char_str(ft_substr(str, (unsigned int) i,
+					ft_str_remaining_char_count(str, &i)), '0')))
+		return (0);
+	sign = check_pos_neg(str, &i);
 	if (sign == 2)
 		return (0);
 	while (str[i] >= '0' && str[i] <= '9')

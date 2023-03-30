@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 16:06:30 by pgouasmi          #+#    #+#             */
-/*   Updated: 2022/11/28 17:30:55 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 14:53:31 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static char	*ft_str_duplicate(char const *s1,
 	return (str);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(const char *s1, const char *set)
 {
 	unsigned int	usable_length;
 	unsigned int	total_length;

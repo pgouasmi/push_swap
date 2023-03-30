@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_str_remaining_charcount.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 11:02:50 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 16:35:26 by pgouasmi         ###   ########.fr       */
+/*   Created: 2023/03/30 13:46:17 by pgouasmi          #+#    #+#             */
+/*   Updated: 2023/03/30 14:26:54 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(int argc, char **argv)
+size_t	ft_str_remaining_char_count(const char *str, int *i)
 {
-	t_list	*a_head;
-	t_list	*b_head;
+	size_t	j;
 
-	a_head = NULL;
-	b_head = NULL;
-	if (ft_check_int_error(argc, argv))
-		return (ft_printf("Error\n"), 1);
-	if (argv_into_list(argc, argv, &a_head))
-		return (ft_printf("Error\n"), 1);
-	if (a_head == NULL)
-		return (ft_printf("Error\n"), 1);
-	ft_push_swap_algorithms(&a_head, &b_head, argc - 1);
-	return (0);
+	j = 0;
+	while (str[(*i)])
+	{
+		(*i)++;
+		j++;
+	}
+	return (j);
 }

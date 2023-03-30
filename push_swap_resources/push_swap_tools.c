@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:50:20 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/29 18:33:02 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:36:03 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,34 @@ void	ft_free_list(t_list	**head)
 		free(temp);
 		temp = temp->next;
 	}
+}
+
+void	ft_print_tab_values(int *tab, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		ft_printf("%d\n", tab[i]);
+		i++;
+	}
+	ft_printf("\n");
+}
+
+int	ft_list_is_ordered(t_list **head)
+{
+	t_list	*temp;
+	int		value;
+
+	temp = (*head)->next;
+	value = (*head)->content;
+	while (temp)
+	{
+		if (value > temp->content)
+			return (0);
+		value = temp->content;
+		temp = temp->next;
+	}
+	return (1);
 }
