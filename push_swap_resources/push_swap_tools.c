@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:50:20 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 22:26:29 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:39:51 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	ft_free_list(t_list	**head)
 		free(temp);
 		temp = temp->next;
 	}
+	*head = NULL;
 }
 
 void	ft_print_tab_values(int *tab, int count)
