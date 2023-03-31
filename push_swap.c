@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:02:50 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 22:23:08 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:47:34 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	main(int argc, char **argv)
 	if (a_head == NULL)
 		return (ft_printf("Error\n"), 1);
 	ft_push_swap_algorithms(&a_head, &b_head, argc - 1);
+	ft_print_list_values(a_head);
 	return (0);
 }

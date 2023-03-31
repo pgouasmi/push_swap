@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:09:42 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 22:27:14 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/31 19:11:07 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,9 @@ void	ft_reverse_rotate_a(t_list **head);
 void	ft_reverse_rotate_b(t_list **head);
 void	ft_rrr(t_list **head_a, t_list **head_b);
 void	ft_push_swap_algorithms(t_list **a_head, t_list **b_head, int argc);
-void	ft_two_elements(t_list **head);
+void	ft_lst_two_elements_sort(t_list **head);
+void	ft_lst_three_elements_sort(t_list **head);
+void	ft_reassign_temp_values(t_list **head, t_list **first, t_list **second, t_list **third);
 int		ft_list_is_ordered(t_list **head);
 
 #endif

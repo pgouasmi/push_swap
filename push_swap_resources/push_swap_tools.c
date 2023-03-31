@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:50:20 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/30 22:39:51 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:48:11 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print__list_values(t_list *head)
+void	ft_print_list_values(t_list *head)
 {
 	t_list	*temp;
 
