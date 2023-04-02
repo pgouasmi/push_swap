@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:02:40 by pgouasmi          #+#    #+#              #
-#    Updated: 2023/03/31 16:44:08 by pgouasmi         ###   ########.fr        #
+#    Updated: 2023/04/02 13:32:47 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ SRCSLIB = ./includes/ft_isalnum.c	\
 		./push_swap_algorithms/push_swap_algorithms.c 	\
 		./push_swap_algorithms/two_elements_case.c		\
 		./push_swap_algorithms/three_elements_case.c	\
+		./push_swap_algorithms/radix_sort.c	\
 		
 
 OBJS = ${SRCSLIB:.c=.o}

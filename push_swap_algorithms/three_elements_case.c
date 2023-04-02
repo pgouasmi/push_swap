@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:07:38 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/31 19:08:02 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/03/31 21:13:10 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,33 @@ void	ft_lst_three_elements_sort(t_list **head)
 	t_list	*second;
 	t_list	*third;
 
-	first = *head;
-	second = (*head)->next;
-	third = second->next;
+	ft_reassign_temp_values(head, &first, &second, &third);
 	while (!ft_list_is_ordered(head))
+	{
+		if (first->content > second->content
+			&& first->content > third->content)
 		{
-			if (first->content > second->content && first->content > third->content)
-			{
-				ft_rotate_a(head);
-				ft_reassign_temp_values(head, &first, &second, &third);
-			}
-			if (first->content > second->content)
-			{
-				ft_swap_a(head);
-				ft_reassign_temp_values(head, &first, &second, &third);
-			}
-			if (second->content > third->content)
-			{
-				ft_reverse_rotate_a(head);
-				ft_reassign_temp_values(head, &first, &second, &third);
-			}
+			ft_rotate_a(head);
+			ft_reassign_temp_values(head, &first, &second, &third);
 		}
+		if (first->content > second->content)
+		{
+			ft_swap_a(head);
+			ft_reassign_temp_values(head, &first, &second, &third);
+		}
+		if (second->content > third->content)
+		{
+			ft_reverse_rotate_a(head);
+			ft_reassign_temp_values(head, &first, &second, &third);
+		}
+	}
 	return ;
 }
 
-void	ft_reassign_temp_values(t_list **head, t_list **first, t_list **second, t_list **third)
+void	ft_reassign_temp_values(t_list **head, t_list **first, t_list **second,
+								t_list **third)
 {
 	*first = *head;
-	*second =  (*head)->next;
+	*second = (*head)->next;
 	*third = (*second)->next;
 }
