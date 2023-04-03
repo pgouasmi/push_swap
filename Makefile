@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:02:40 by pgouasmi          #+#    #+#              #
-#    Updated: 2023/04/02 13:32:47 by pgouasmi         ###   ########.fr        #
+#    Updated: 2023/04/03 14:59:32 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,3 +89,7 @@ clean:
 
 fclean: 	clean
 			rm -f $(NAME)
+
+re :
+	make fclean
+	make
