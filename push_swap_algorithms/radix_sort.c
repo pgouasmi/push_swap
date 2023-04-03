@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 19:37:42 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/04/02 15:46:31 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/02 17:02:09 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lst_radix_sort(t_list **a_head, t_list **b_head)
 	int bit;
 	t_list *temp;
 
-	max_bit = 64;
+	max_bit = sizeof(int) * 8;
 	bit = 0;
 	mask = 1;
 	temp = *a_head;
@@ -33,7 +33,6 @@ void	ft_lst_radix_sort(t_list **a_head, t_list **b_head)
 				while (*a_head != temp)
 					ft_rotate_a(a_head);
 				ft_push_b(a_head, b_head);
-				ft_rotate_b(b_head);
 			}
 			temp = temp->next;
 		}
