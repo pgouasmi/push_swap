@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:50:20 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/31 18:48:11 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:25:02 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,16 @@ void	ft_print_list_values(t_list *head)
 void	ft_free_list(t_list	**head)
 {
 	t_list	*temp;
+	t_list	*temp2;
 
 	temp = *head;
-	while (temp->next)
+	while (temp)
 	{
-		free(temp);
+		temp2 = temp;
 		temp = temp->next;
+		free(temp);
 	}
-	*head = NULL;
+	free(head);
 }
 
 void	ft_print_tab_values(int *tab, int count)
@@ -50,7 +52,7 @@ void	ft_print_tab_values(int *tab, int count)
 	ft_printf("\n");
 }
 
-int	ft_list_is_ordered(t_list **head)
+int	ft_lst_content_is_ordered(t_list **head)
 {
 	t_list	*temp;
 	int		value;

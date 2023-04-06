@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:23:00 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/04/03 14:44:36 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:28:38 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_push_swap_algorithms(t_list **a_head, t_list **b_head, int argc)
 {
-	if (ft_list_is_ordered(a_head))
+	if (ft_lst_content_is_ordered(a_head))
 		return ;
 	else
 	{

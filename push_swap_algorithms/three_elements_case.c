@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 16:07:38 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/03/31 21:13:10 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:29:14 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_lst_three_elements_sort(t_list **head)
 	t_list	*third;
 
 	ft_reassign_temp_values(head, &first, &second, &third);
-	while (!ft_list_is_ordered(head))
+	while (!ft_lst_content_is_ordered(head))
 	{
 		if (first->content > second->content
 			&& first->content > third->content)

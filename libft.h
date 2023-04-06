@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:09:42 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/04/02 13:31:54 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:04:17 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 typedef struct s_list
 {
 	int				content;
+	int				position;
+	int				index;
 	struct s_list	*next;
 }				t_list;
 
@@ -79,6 +81,7 @@ int		ft_argv_into_list(int argc, char **argv, t_list **a_head);
 int		ft_new_node(t_list **a_head, int value);
 void	ft_print_tab_values(int *tab, int count);
 void	ft_print_list_values(t_list *head);
+void	ft_print_list_index(t_list *head);
 void	ft_free_list(t_list	**head);
 void	ft_swap_a(t_list **a_head);
 void	ft_swap_b(t_list **b_head);
@@ -96,7 +99,15 @@ void	ft_lst_two_elements_sort(t_list **head);
 void	ft_lst_three_elements_sort(t_list **head);
 void	ft_reassign_temp_values(t_list **head, t_list **first, t_list **second,
 			t_list **third);
-int		ft_list_is_ordered(t_list **head);
+int		ft_lst_content_is_ordered(t_list **head);
+void	ft_lst_position_initialize(t_list **head);
+int		ft_lst_position_is_ordered(t_list **head);
+void	ft_lst_reorder_position(t_list **head);
+void	ft_lst_rotate_to_top_a(t_list **head, int place, int size);
+void	ft_lst_rotate_to_top_b(t_list **head, int place, int size);
+void	ft_lst_index_initialize(t_list **head, int elements_count);
+void	ft_lst_index_initialize_to_zero(t_list **head);
+int		ft_lst_get_int_min(t_list **head);
 void	ft_lst_radix_sort(t_list **a_head, t_list **b_head);
 
 #endif

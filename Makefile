@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:02:40 by pgouasmi          #+#    #+#              #
-#    Updated: 2023/04/03 14:59:32 by pgouasmi         ###   ########.fr        #
+#    Updated: 2023/04/06 12:28:31 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,8 @@ SRCSLIB = ./includes/ft_isalnum.c	\
 		./push_swap_resources/error_manager_push_swap.c	\
 		./push_swap_resources/list_creator.c			\
 		./push_swap_resources/push_swap_tools.c			\
+		./push_swap_resources/radix_tools.c				\
+		./push_swap_resources/radix_index_tools.c		\
 		./push_swap_algorithms/push_swap_algorithms.c 	\
 		./push_swap_algorithms/two_elements_case.c		\
 		./push_swap_algorithms/three_elements_case.c	\
@@ -89,6 +91,9 @@ clean:
 
 fclean: 	clean
 			rm -f $(NAME)
+
+ffclean:	fclean
+			rm -f ./a.out
 
 re :
 	make fclean
