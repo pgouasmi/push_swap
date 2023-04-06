@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:22:59 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/04/06 12:24:27 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:37:19 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 
 void	ft_lst_index_initialize(t_list **head, int elements_count)
 {
-	int index_value;
-	int	value_to_compare;
+	int		index_value;
+	int		value_to_compare;
 	t_list	*temp;
 
-	index_value = 1;
+	index_value = 0;
 	temp = *head;
 	ft_lst_index_initialize_to_zero(head);
-	while (index_value < elements_count)
+	while (index_value++ < elements_count)
 	{
 		value_to_compare = ft_lst_get_int_min(head);
 		while (temp)
 		{
 			if (temp->content == value_to_compare)
-			{
 				temp->index = index_value;
-				index_value++;
-			}
 			temp = temp->next;
 		}
 		temp = *head;
@@ -47,6 +44,7 @@ void	ft_lst_index_initialize(t_list **head, int elements_count)
 void	ft_lst_index_initialize_to_zero(t_list **head)
 {
 	t_list	*temp;
+
 	temp = *head;
 	while (temp)
 	{

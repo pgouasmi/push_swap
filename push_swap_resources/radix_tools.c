@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:21:56 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/04/06 12:27:04 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:33:26 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	ft_lst_position_is_ordered(t_list **head)
 
 void	ft_lst_position_initialize(t_list **head)
 {
-	int	i;
-	t_list* temp;
+	int		i;
+	t_list	*temp;
 
 	i = 1;
 	temp = *head;
