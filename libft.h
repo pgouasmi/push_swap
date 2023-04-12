@@ -6,7 +6,7 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:09:42 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/04/06 12:04:17 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:28:47 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,17 @@ void	ft_putnbr_base_p(size_t n, const char *base, size_t *char_count);
 int		ft_str_same_char_str(const char *str, int c);
 size_t	ft_str_remaining_char_count(const char *str, int *i);
 int		ft_check_single_int_arg(char *str);
+int		ft_check_arg_quotes(char *str);
+int		ft_check_char(char c, int d);
 int		ft_check_int_error(int argc, char **argv);
 int		ft_check_int_duplicate(int *tab, int argc);
-int		ft_argv_into_list(int argc, char **argv, t_list **a_head);
+int		ft_argv_into_list(int argc, char **argv, t_list **a_head, size_t *arg_count);
+size_t	ft_count_args_quote(int argc, char **argv);
+size_t	ft_str_count_char(char *str, int c);
+int		ft_arg_quote_case(char *str, int **tab, int *i);
+int		ft_send_int_array_to_list(size_t *arg_count, int *tab, t_list **a_head);
 int		ft_new_node(t_list **a_head, int value);
-void	ft_print_tab_values(int *tab, int count);
+void	ft_print_tab_values(int *tab, size_t count);
 void	ft_print_list_values(t_list *head);
 void	ft_print_list_index(t_list *head);
 void	ft_free_list(t_list	**head);
@@ -94,7 +100,7 @@ void	ft_rr(t_list **head_a, t_list **head_b);
 void	ft_reverse_rotate_a(t_list **head);
 void	ft_reverse_rotate_b(t_list **head);
 void	ft_rrr(t_list **head_a, t_list **head_b);
-void	ft_push_swap_algorithms(t_list **a_head, t_list **b_head, int argc);
+void	ft_push_swap_algorithms(t_list **a_head, t_list **b_head, size_t argc);
 void	ft_lst_two_elements_sort(t_list **head);
 void	ft_lst_three_elements_sort(t_list **head);
 void	ft_reassign_temp_values(t_list **head, t_list **first, t_list **second,

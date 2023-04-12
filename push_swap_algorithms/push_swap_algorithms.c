@@ -6,13 +6,13 @@
 /*   By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 15:23:00 by pgouasmi          #+#    #+#             */
-/*   Updated: 2023/04/06 12:32:55 by pgouasmi         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:45:56 by pgouasmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_push_swap_algorithms(t_list **a_head, t_list **b_head, int argc)
+void	ft_push_swap_algorithms(t_list **a_head, t_list **b_head, size_t argc)
 {
 	if (ft_lst_content_is_ordered(a_head))
 		return ;

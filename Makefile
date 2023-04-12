@@ -6,7 +6,7 @@
 #    By: pgouasmi <pgouasmi@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/22 11:02:40 by pgouasmi          #+#    #+#              #
-#    Updated: 2023/04/06 12:28:31 by pgouasmi         ###   ########.fr        #
+#    Updated: 2023/04/06 14:59:13 by pgouasmi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,3 +98,7 @@ ffclean:	fclean
 re :
 	make fclean
 	make
+
+remake :	re
+			$(CC) $(FLAG) push_swap.c libft.a
+		
