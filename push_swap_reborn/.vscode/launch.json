@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/pascal/Documents/42/tronc_commun/push_swap/push_swap_reborn",
+      "program": "/Users/pascal/Documents/42/tronc_commun/push_swap/push_swap_reborn/build/Debug/outDebug"
+    }
+  ]
+}
